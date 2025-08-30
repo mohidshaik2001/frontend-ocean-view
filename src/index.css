@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #403b4a 0%,
+    #e7e9bb 51%,
+    #403b4a 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-grad2 {
+  background-image: linear-gradient(
+    to right,
+    #757f9a 0%,
+    #d7dde8 51%,
+    #757f9a 100%
+  );
+}
+.btn-grad2 {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad2:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+@layer components {
+  .btn-glossy {
+    @apply absolute bottom-4 left-1/10 -translate-x-1/2 
+           bg-gradient-to-br from-[#9d3816] to-[#e3391b]
+           hover:bg-gradient-to-br hover:from-[#d43a29] hover:to-[#f81a02] 
+           text-white font-semibold 
+           px-6 py-2 rounded-full shadow-lg 
+           transition-all duration-300;
+  }
+  .btn-glossy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.5s;
+  }
+  .btn-glossy:hover::before {
+    left: 100%;
+  }
+
+  .btn2-glossy {
+    @apply absolute bottom-4 left-5/10 -translate-x-1/2 
+           bg-gradient-to-br from-[#9d3816] to-[#e3391b]
+           hover:bg-gradient-to-br hover:from-[#d43a29] hover:to-[#f81a02] 
+           text-white font-semibold 
+           px-6 py-2 rounded-full shadow-lg 
+           transition-all duration-300;
+  }
+  .btn2-glossy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: 0.5s;
+  }
+  .btn2-glossy:hover::before {
+    left: 100%;
+  }
+}
+
+@keyframes swim-left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swim-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-swim-left {
+  animation: swim-left 4s ease-in-out infinite;
+}
+
+.animate-swim-right {
+  animation: swim-right 4s ease-in-out infinite;
+}
+
+.video-transition {
+  transition: opacity 0.5s ease-in-out;
+}
+.video-hidden {
+  opacity: 0;
+}
+.video-visible {
+  opacity: 1;
+}
