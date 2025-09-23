@@ -33,9 +33,9 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full bg-gradient-to-br from-[#076585] to-[#fff] h-screen ">
+    <div className="flex items-center justify-center w-full  h-screen ">
       <div
-        className={`mx-auto w-full max-w-lg bg-gradient-to-l from-[#076585] to-[#fff] rounded-lg p-10 border border-black/50`}
+        className={`mx-auto w-full max-w-lg bg-gradient-to-br from-[#bdc3c7] to-[#2c3e50] rounded-3xl p-10 border border-black/50`}
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">

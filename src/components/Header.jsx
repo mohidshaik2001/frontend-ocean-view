@@ -12,7 +12,7 @@ function Header() {
   useEffect(() => {
     const currentPath = window.location.pathname;
     console.log("currentPath", currentPath);
-    if (currentPath === "/videocall") {
+    if (currentPath === "/meeting") {
       setButtonPath(false);
     } else {
       setButtonPath(true);

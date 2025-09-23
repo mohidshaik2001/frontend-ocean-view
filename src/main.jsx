@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
-import VideoCall from "./pages/videocall.jsx";
+import Meeting from "./pages/meeting.jsx";
 import MeetingRoom from "./pages/MeetingRoom.jsx";
 import AuthLayout from "./components/containers/AuthLayout.jsx";
 import { createBrowserRouter } from "react-router-dom";
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/videocall",
+        path: "/meeting",
         element: (
           <AuthLayout authentication={true}>
-            <VideoCall />
+            <Meeting />
           </AuthLayout>
         ),
       },
@@ -60,6 +60,6 @@ createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </Provider>
 );
-
-const logger = new Logger();
+const randomId = Math.floor(Math.random() * 10);
+const logger = new Logger(`frontend-${randomId}`);
 export { logger };

@@ -1,0 +1,108 @@
+.join-request-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.join-request-modal {
+  background-color: #202124;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.join-request-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #3c4043;
+}
+
+.join-request-header h3 {
+  margin: 0;
+  color: #e8eaed;
+  font-size: 18px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #9aa0a6;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.close-button:hover {
+  color: #e8eaed;
+}
+
+.join-request-content {
+  padding: 24px 16px;
+  color: #e8eaed;
+}
+
+.caller-email {
+  color: #9aa0a6;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.join-request-actions {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #3c4043;
+}
+
+.accept-button, .reject-button {
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.accept-button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+}
+
+.accept-button:hover {
+  background-color: #1765cc;
+}
+
+.reject-button {
+  background-color: transparent;
+  color: #e8eaed;
+  border: 1px solid #3c4043;
+}
+
+.reject-button:hover {
+  background-color: rgba(232, 234, 237, 0.04);
+}

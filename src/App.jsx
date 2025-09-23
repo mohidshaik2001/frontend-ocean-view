@@ -4,6 +4,7 @@ import "./App.css";
 import authService from "./api/user.api.js";
 import { login, logout } from "./store/authSlice.js";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import { Outlet } from "react-router-dom";
 function App() {
   const [loading, setLoadig] = useState(true);
@@ -30,6 +31,7 @@ function App() {
         <main className="w-full h-175">
           <Outlet />
         </main>
+        <Footer />
       </div>
     </div>
   ) : null;

@@ -30,9 +30,10 @@ function PopoverMenu() {
     // },
   ];
   const logoutHandler = async () => {
+    console.log("logout");
     authService.logoutUser().then(() => {
       dispatch(logout());
-      navigate("/");
+      navigate("/login");
     });
   };
   return (
