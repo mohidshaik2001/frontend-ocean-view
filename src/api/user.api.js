@@ -2,7 +2,7 @@ import { conf } from "../conf.js";
 import axios from "axios";
 export class AuthService {
   constructor() {
-    this.api = `${conf.api_url}/api/v1/user`;
+    this.api = `${conf.api_url}/user`;
   }
 
   async registerUser({ email, password, fullName }) {

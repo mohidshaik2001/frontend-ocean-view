@@ -8,7 +8,7 @@ export class SignalingService extends EventEmitter {
     super();
 
     this.signalingurl = `${conf.signal_url}`;
-    this.signalingApiUrl = `${conf.signalapi_url}/signalapi/v1`;
+    this.signalingApiUrl = `${conf.signalapi_url}`;
     this.ws = null;
     this.pending = new Map();
     this.nextId = 1;
@@ -54,7 +54,7 @@ export class SignalingService extends EventEmitter {
       return false;
     }
   }
-  
+
   async acceptJoinRequest({ roomId, requestId, acceptingPeerId }) {
     try {
       logger.log("acceptJoinRequest is called");
@@ -75,7 +75,7 @@ export class SignalingService extends EventEmitter {
       return false;
     }
   }
-  
+
   async rejectJoinRequest({ roomId, requestId, rejectingPeerId }) {
     try {
       logger.log("rejectJoinRequest is called");

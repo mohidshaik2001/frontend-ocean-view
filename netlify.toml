@@ -1,0 +1,13 @@
+# netlify.toml
+[build]
+  command = "npm install && npm run build"
+  publish = "dist" # <-- change this if your build outputs somewhere else
+
+[build.environment]
+  NODE_VERSION = "18"       # Mediasoup works best with Node 18+
+  PYTHON = "python3"        # Force Netlify to use Python 3
+  PYTHON_VERSION = "3.10"   # Explicit Python version
+
+# Run extra installs before the build
+[build.lifecycle]
+  onBuild = "pip install meson ninja"
