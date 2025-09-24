@@ -13,6 +13,7 @@ import store from "./store/store.js";
 import { RouterProvider } from "react-router-dom";
 import { StrictMode } from "react";
 import Logger from "./utilities/Logger.js";
+import { conf } from "./conf.js";
 
 const router = createBrowserRouter([
   {
@@ -61,5 +62,5 @@ createRoot(document.getElementById("root")).render(
   </Provider>
 );
 const randomId = Math.floor(Math.random() * 10);
-const logger = new Logger(`frontend-${randomId}`);
+const logger = new Logger(`frontend-${randomId}`, conf.log_url);
 export { logger };
