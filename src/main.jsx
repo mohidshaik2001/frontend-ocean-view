@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
-import Meeting from "./pages/meeting.jsx";
+import Meeting from "./pages/Meeting.jsx";
 import MeetingRoom from "./pages/MeetingRoom.jsx";
 import AuthLayout from "./components/containers/AuthLayout.jsx";
 import { createBrowserRouter } from "react-router-dom";
