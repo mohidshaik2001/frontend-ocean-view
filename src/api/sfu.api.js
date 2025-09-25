@@ -102,12 +102,12 @@ export class SFUService extends EventEmitter {
     this.recvTransport = this.device.createRecvTransport({
       ...recvParams,
       iceServers: [
-        { urls: "stun:stun.l.google.com:19302" },
         {
           urls: ["turns:oceanview.sfu.primedevs.online:5349"],
           username: "turnuser",
           credential: "turnpassword",
         },
+        { urls: "stun:stun.l.google.com:19302" },
       ],
     });
 
@@ -209,12 +209,12 @@ export class SFUService extends EventEmitter {
     this.sendTransport = this.device.createSendTransport({
       ...sendParams,
       iceServers: [
-        { urls: "stun:stun.l.google.com:19302" },
         {
           urls: ["turns:oceanview.sfu.primedevs.online:5349"],
           username: "turnuser",
           credential: "turnpassword",
         },
+        { urls: "stun:stun.l.google.com:19302" },
       ],
     });
 
