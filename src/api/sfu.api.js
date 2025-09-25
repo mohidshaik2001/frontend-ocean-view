@@ -99,7 +99,10 @@ export class SFUService extends EventEmitter {
       );
     }
 
-    this.recvTransport = this.device.createRecvTransport(recvParams);
+    this.recvTransport = this.device.createRecvTransport({
+      ...recvParams,
+      iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+    });
 
     // Handle receive transport connect
     this.recvTransport.on(
@@ -196,7 +199,10 @@ export class SFUService extends EventEmitter {
       throw new Error("Invalid transport parameters received from server");
     }
 
-    this.sendTransport = this.device.createSendTransport(sendParams);
+    this.sendTransport = this.device.createSendTransport({
+      ...sendParams,
+      iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+    });
 
     this.sendTransport.on(
       "connect",
