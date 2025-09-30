@@ -103,12 +103,19 @@ export class SFUService extends EventEmitter {
       ...recvParams,
       iceServers: [
         {
-          urls: ["turns:oceanview.sfu.primedevs.online:5349"],
+          urls: ["stun:oceanview.sfu.primedevs.online:3478"],
+        },
+        {
+          urls: [
+            "turn:oceanview.sfu.primedevs.online:3478?transport=udp",
+            "turn:oceanview.sfu.primedevs.online:3478?transport=tcp",
+            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
+          ],
           username: "turnuser",
           credential: "turnpassword",
         },
-        { urls: "stun:stun.l.google.com:19302" },
       ],
+      iceTransportPolicy: "all",
     });
 
     // Handle receive transport connect
@@ -210,12 +217,19 @@ export class SFUService extends EventEmitter {
       ...sendParams,
       iceServers: [
         {
-          urls: ["turns:oceanview.sfu.primedevs.online:5349"],
+          urls: ["stun:oceanview.sfu.primedevs.online:3478"],
+        },
+        {
+          urls: [
+            "turn:oceanview.sfu.primedevs.online:3478?transport=udp",
+            "turn:oceanview.sfu.primedevs.online:3478?transport=tcp",
+            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
+          ],
           username: "turnuser",
           credential: "turnpassword",
         },
-        { urls: "stun:stun.l.google.com:19302" },
       ],
+      iceTransportPolicy: "all",
     });
 
     this.sendTransport.on(
