@@ -107,9 +107,9 @@ export class SFUService extends EventEmitter {
         },
         {
           urls: [
+            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
             "turn:oceanview.sfu.primedevs.online:3478?transport=udp",
             "turn:oceanview.sfu.primedevs.online:3478?transport=tcp",
-            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
           ],
           username: "turnuser",
           credential: "turnpassword",
@@ -221,9 +221,9 @@ export class SFUService extends EventEmitter {
         },
         {
           urls: [
+            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
             "turn:oceanview.sfu.primedevs.online:3478?transport=udp",
             "turn:oceanview.sfu.primedevs.online:3478?transport=tcp",
-            "turns:oceanview.sfu.primedevs.online:5349?transport=tcp", // TLS
           ],
           username: "turnuser",
           credential: "turnpassword",
