@@ -127,6 +127,11 @@ export class SignalingService extends EventEmitter {
         this.ws.onmessage = (event) => {
           const msg = JSON.parse(event.data);
 
+          if (msg.type === "ping") {
+            this.ws.send(JSON.stringify({ type: "pong" }));
+            return;
+          }
+
           if (msg.id && (msg.ok === true || msg.ok === false)) {
             logger.logd("message from signaling server", {
               id: msg.id,

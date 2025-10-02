@@ -11,6 +11,14 @@ export default class Logger {
       console.log(`[Logger] Connected to log server for ${this.serviceName}`);
     };
 
+    this.ws.onmessage = (event) => {
+      try {
+        const msg = JSON.parse(event.data);
+        if (msg.type == "ping") {
+          this.ws.send(JSON.stringify({ type: "pong" }));
+        }
+      } catch (error) {}
+    };
     this.ws.onerror = (err) => {
       console.error(`[Logger] WebSocket error:`, err.message);
     };
